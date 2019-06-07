@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="display-1 text-center my-5">Tip Calculator</h1>
+		<div class="row">
+			<div class="col-12 my-2">
+				<input type="number"  placeholder="Percentage" name="percentage" id="percent" class="form-control">
+			</div>
+			<div class="col-12 my-2">
+				<input type="number" placeholder="Meal cost" name="cost" id="cost" class="form-control">
+			</div>
+			<div class="col-12 my-2">
+				<a href="#" class="btn btn-primary d-block">Calculate Tip</a>
+			</div>
+		</div>
+		<h1 class="result display-4 text-center mt-4"></h1>
+	</div>
+<script src="jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".btn").click(function(){
+			$(".result").hide();
+			var percent=$("#percent").val();
+			var cost=$("#cost").val();
+			var result=(percent*cost)/100;
+			$(".result").text("Tip: "+result);
+			$(".result").slideDown();
+		});
+	});
+</script>
+</body>
+</html>
